@@ -1,7 +1,15 @@
 var util = require('util');
-var store = require('windows.services.store');
-var context = store.StoreContext.getDefault();
+const winrt_modules = require('./winrt_modules/build/Release/winrt_modules');
 
+//var store = require('windows.services.store');
+//var context = store.StoreContext.getDefault();
+
+const { remote, BrowserWindow } = require('electron')
+currentWindow = remote.getCurrentWindow()
+console.info("HWND: " + currentWindow.getNativeWindowHandle())
+console.log(winrt_modules.Hello());
+
+/*
 store.StoreRequestHelper.sendRequestAsync(context, 25, "{}",  function(err, res) {
   if (err) {
     console.error(err);
@@ -14,3 +22,4 @@ store.StoreRequestHelper.sendRequestAsync(context, 25, "{}",  function(err, res)
     console.info("Store Response:" + res.response);
   }
 });
+*/

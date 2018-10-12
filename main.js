@@ -1,7 +1,5 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
-const { Geolocator } = require('windows.devices.geolocation')
-const locator = new Geolocator()
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -10,27 +8,12 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600})
-
+  
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
-
-
-
-    locator.getGeopositionAsync((error, result) => {
-      if (error) {
-        console.error(error)
-        return
-      }
-
-      const { coordinate } = result
-      const { longitude, latitude } = coordinate
-
-      console.info(longitude, latitude)
-    })
-
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

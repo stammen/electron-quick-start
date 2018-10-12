@@ -21,7 +21,6 @@
     "electron-rebuild": "^1.8.2"
   },
   "dependencies": {
-    "windows.devices.geolocation": "file:../NodeRT/src/NodeRTCMD/bin/Debug/output/windows.devices.geolocation",
-    "windows.services.store": "file:../NodeRT/src/NodeRTUI/bin/Debug/output/windows.services.store"
+    "nan": "^2.11.1"
   }
 }
