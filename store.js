@@ -1,5 +1,5 @@
 var util = require('util');
-const winrt_modules = require('./winrt_modules/build/Release/winrt_modules');
+const winrt_modules = require('./uwp/winrt_modules/build/Release/winrt_modules');
 
 //var store = require('windows.services.store');
 //var context = store.StoreContext.getDefault();
