@@ -13,7 +13,7 @@ echo Building c++/winrt modules...
 pushd .\winrt_modules
     call npm install --save-dev electron-rebuild
     call node-gyp configure
-    call node-gyp build
+    call node-gyp rebuild
     echo Rebuilding c++/winrt modules for Electron...
     call .\node_modules\.bin\electron-rebuild.cmd
 popd
